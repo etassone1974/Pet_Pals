@@ -48,7 +48,7 @@ def run_example():
 
 @app.route('/parameters/<petal_length>&<sepal_length>&<petal_width>&<sepal_width>')
 def get_prediction(petal_length=5, sepal_length=5, petal_width=5, sepal_width=5):
-    url = 'https://jl-uwa-demo.herokuapp.com/predict'
+    url = 'https://etassone-pet-pals.herokuapp.com/predict'
     body = {
         "petal_length": petal_length,
         "sepal_length": sepal_length,

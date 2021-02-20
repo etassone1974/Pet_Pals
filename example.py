@@ -1,7 +1,7 @@
 import requests
 
 def run_request():
-    url = 'https://jl-uwa-demo.herokuapp.com/predict'
+    url = 'https://etassone-pet-pals.herokuapp.com/predict'
     body = {
         "petal_length": 2,
         "sepal_length": 2,
