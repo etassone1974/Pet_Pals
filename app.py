@@ -2,6 +2,7 @@ from flask import Flask
 import numpy as np
 from flask_restful import Api
 from predict import Predict
+import requests
 from example import run_request
 from models import create_classes
 import os
@@ -12,17 +13,17 @@ from flask import (
     request,
     redirect)
 
+
 # Create APP
 app = Flask(__name__)
 API = Api(app)
 
 # Load database
 from flask_sqlalchemy import SQLAlchemy
-# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite" os.environ.get('DATABASE_URL', '') or 
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite" # os.environ.get('DATABASE_URL', '') or 
 
 # DATABASE_URL will contain the database connection string:
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
-
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -47,7 +48,7 @@ def run_example():
 
 @app.route('/parameters/<petal_length>&<sepal_length>&<petal_width>&<sepal_width>')
 def get_prediction(petal_length=5, sepal_length=5, petal_width=5, sepal_width=5):
-    url = 'https://jl-uwa-demo.herokuapp.com/predict'
+    url = 'http://127.0.0.1/predict'
     body = {
         "petal_length": petal_length,
         "sepal_length": sepal_length,

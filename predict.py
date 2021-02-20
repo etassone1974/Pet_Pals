@@ -10,8 +10,8 @@ class Predict(Resource):
     def post():
         parser = reqparse.RequestParser()
         parser.add_argument('petal_length')
-        parser.add_argument('petal_width')
         parser.add_argument('sepal_length')
+        parser.add_argument('petal_width')
         parser.add_argument('sepal_width')
 
         # Use parser to create dictionary of data input

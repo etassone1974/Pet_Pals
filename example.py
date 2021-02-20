@@ -1,7 +1,7 @@
-# import requests
+import requests
 
 def run_request():
-    url = 'https://jl-uwa-demo.herokuapp.com/predict'
+    url = 'http://127.0.0.1/predict'
     body = {
         "petal_length": 2,
         "sepal_length": 2,
