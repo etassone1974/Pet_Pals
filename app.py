@@ -20,10 +20,10 @@ API = Api(app)
 
 # Load database
 from flask_sqlalchemy import SQLAlchemy
-# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite" # os.environ.get('DATABASE_URL', '') or 
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite" # os.environ.get('DATABASE_URL', '') or 
 
 # DATABASE_URL will contain the database connection string:
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
